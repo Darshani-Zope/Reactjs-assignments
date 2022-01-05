@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<title>Results of a Inyterview</title>
+
+<head>
+    <script>
+        let users = [{
+                "name": "Shashank"
+            }, {
+                "name": "Priyanka"
+            }, {
+                "name": "Juhi"
+            }, {
+                "name": "Hemangi"
+            }, {
+                "name": "Archana"
+            }, {
+                "name": "Bhavesh"
+            }, {
+                "name": "Namrata"
+            }]
+            //Map:assign a random value * 100 
+        let marksDetails = users.map(user => {
+            user.marks = Math.random() * 100;
+            return user;
+        })
+        console.log(marksDetails)
+            //filter: select candidate above 60
+        let aboveCandidate = marksDetails.filter(user => {
+            if (user.marks > 60) {
+                return user;
+            }
+        })
+        console.log(aboveCandidate)
+            //Reduce a team
+        let teamForms = aboveCandidate.reduce((teamForms, user) => {
+            teamForms.push(user);
+            return teamForms;
+        }, []);
+        console.log(teamForms)
+    </script>
+</head>
+
+</html>
